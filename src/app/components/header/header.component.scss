@@ -1,0 +1,144 @@
+/* === NAV DESKTOP === */
+.nav-desktop {
+  display: flex;
+}
+
+.nav-desktop ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-desktop a {
+  text-decoration: none;
+  color: #f9fafb;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-desktop a:hover {
+  color: #9333ea;
+}
+
+/* === Responsive: ocultar menú escritorio y mostrar hamburguesa === */
+@media screen and (max-width: 768px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* === HEADER === */
+.site-header {
+  color: #f9fafb;
+  background-color: #0d0d2b;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Contenedor */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f9fafb;
+}
+
+/* Menú hamburguesa (visible solo en móviles) */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1101;
+}
+
+/* Overlay oscuro con blur (fondo difuminado) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 30, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Sidebar lateral móvil (desde la derecha) */
+.nav-mobile {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background: #0d0d2b;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem 1.5rem;
+  transition: right 0.3s ease;
+  z-index: 1102;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.nav-mobile ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-mobile li {
+  margin-bottom: 1rem;
+}
+
+.nav-mobile a {
+  color: #f9fafb;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-mobile a:hover {
+  color: #9333ea;
+}
+
+.nav-mobile.open {
+  right: 0;
+}
+
+/* === Responsive (móviles) === */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+  }
+}

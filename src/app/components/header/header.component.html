@@ -1,0 +1,33 @@
+<header class="site-header">
+  <div class="container">
+    <h3 class="logo">Pierre Contreras</h3>
+
+    <!-- Menú horizontal visible solo en escritorio -->
+    <nav class="nav-desktop">
+      <ul>
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#experience">Experiencia</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#skills">Habilidades</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- Botón hamburguesa para móviles -->
+    <div class="menu-toggle" (click)="toggleMenu()">☰</div>
+  </div>
+
+  <!-- Fondo difuminado al abrir menú móvil -->
+  <div class="overlay" [class.active]="menuOpen" (click)="closeMenu()"></div>
+
+  <!-- Sidebar lateral desde la derecha -->
+  <nav class="nav-mobile" [class.open]="menuOpen">
+    <ul>
+      <li><a href="#about" (click)="closeMenu()">Sobre mí</a></li>
+      <li><a href="#experience" (click)="closeMenu()">Experiencia</a></li>
+      <li><a href="#projects" (click)="closeMenu()">Proyectos</a></li>
+      <li><a href="#skills" (click)="closeMenu()">Habilidades</a></li>
+      <li><a href="#contact" (click)="closeMenu()">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
