@@ -1,20 +1,26 @@
 <header class="site-header">
   <div class="container">
-    <h3 class="logo">PC</h3>
+    <h3 class="logo">
+      PC
+    </h3>
 
     <!-- Menú horizontal visible solo en escritorio -->
     <nav class="nav-desktop">
       <ul>
-        <li><a href="#about">Sobre mí</a></li>
-        <li><a href="#experience">Experiencia</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#skills">Habilidades</a></li>
-        <li><a href="#contact">Contacto</a></li>
+        <li><a href="#about"><span>Sobre mí</span></a></li>
+        <li><a href="#experience"><span>Experiencia</span></a></li>
+        <li><a href="#projects"><span>Proyectos</span></a></li>
+        <li><a href="#skills"><span>Habilidades</span></a></li>
+        <li><a href="#contact" class="contact-link"><span>Contacto</span></a></li>
       </ul>
     </nav>
 
     <!-- Botón hamburguesa para móviles -->
-    <div class="menu-toggle" (click)="toggleMenu()">☰</div>
+    <div class="menu-toggle" (click)="toggleMenu()">
+      <span [class.open]="menuOpen"></span>
+      <span [class.open]="menuOpen"></span>
+      <span [class.open]="menuOpen"></span>
+    </div>
   </div>
 
   <!-- Fondo difuminado al abrir menú móvil -->
@@ -27,7 +33,7 @@
       <li><a href="#experience" (click)="closeMenu()">Experiencia</a></li>
       <li><a href="#projects" (click)="closeMenu()">Proyectos</a></li>
       <li><a href="#skills" (click)="closeMenu()">Habilidades</a></li>
-      <li><a href="#contact" (click)="closeMenu()">Contacto</a></li>
+      <li><a href="#contact" (click)="closeMenu()" class="contact-link">Contacto</a></li>
     </ul>
   </nav>
 </header>
